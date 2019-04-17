@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_redux/flutter_redux.dart';
-
 import 'package:redux/redux.dart';
 import 'package:redux_persist/redux_persist.dart';
 import 'package:redux_persist_flutter/redux_persist_flutter.dart';
-
 import 'package:todo/container/container.dart';
 import 'package:todo/model/model.dart';
 import 'package:todo/reducer/reducer.dart';
