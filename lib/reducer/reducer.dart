@@ -33,9 +33,9 @@ AppState completeItemReducer(AppState state, CompleteItemAction action) {
 AppState appReducer(AppState state, action) {
   final reducer = combineReducers<AppState>([
     TypedReducer<AppState, AddItemAction>(addItemReducer),
+    TypedReducer<AppState, CompleteItemAction>(completeItemReducer),
     TypedReducer<AppState, RemoveItemAction>(removeItemReducer),
     TypedReducer<AppState, RemoveItemsAction>(removeItemsReducer),
-    TypedReducer<AppState, CompleteItemAction>(completeItemReducer),
   ]);
   return reducer(state, action);
 }

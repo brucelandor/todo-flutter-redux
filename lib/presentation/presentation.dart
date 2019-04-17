@@ -3,10 +3,10 @@ import "package:todo/model/model.dart";
 
 class TodoPresentation extends StatelessWidget {
   final List<Item> todos;
-  final Function(String body) onAddItem;
-  final Function(Item) onRemoveItem;
   final Function() onRemoveItems;
   final Function(Item) onCompleteItem;
+  final Function(Item) onRemoveItem;
+  final Function(String body) onAddItem;
 
   TodoPresentation({
     this.todos,
@@ -56,7 +56,11 @@ class _AddItemState extends State<AddItem> {
   Widget build(BuildContext context) {
     return TextField(
         controller: ctrl,
-        decoration: InputDecoration(hintText: "add a todo"),
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(10),
+          hintText: "add a todo",
+          border: OutlineInputBorder(),
+        ),
         onSubmitted: (text) {
           widget.onAddItem(text);
           ctrl.text = "";
